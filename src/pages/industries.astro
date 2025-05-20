@@ -1,0 +1,98 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro'; // Suitable for card-based industry layout
+
+const metadata = {
+  title: "Specialized IT Support for Your Industry | IT Technicians",
+  description: "IT Technicians offers expert on-site IT support tailored to the unique demands of industries like retail, finance, healthcare, real estate, and logistics."
+};
+
+const industries = [
+  {
+    name: "Retail & Hospitality",
+    needs: "POS system reliability, inventory management systems, network connectivity for guest services and operations, data security (PCI compliance), digital signage, customer-facing technologies.",
+    solution: "We ensure your customer-facing and back-office technologies run smoothly, minimizing downtime that impacts sales and guest satisfaction. From deploying new POS systems across your chain to providing emergency support during peak hours, we understand the fast-paced demands of retail and hospitality.",
+  },
+  {
+    name: "Finance & Banking",
+    needs: "Secure data handling and network infrastructure, compliance with financial regulations (e.g., GLBA, SOX), reliable branch office connectivity, trading floor support, ATM and kiosk maintenance.",
+    solution: "Our technicians are versed in the critical nature of security and compliance in the financial sector. We provide discreet, professional on-site support for your branches and operational centers, ensuring system integrity and adherence to stringent industry standards.",
+  },
+  // {
+  //   name: "Healthcare",
+  //   needs: "EHR/EMR system support, HIPAA compliance, medical device connectivity, secure patient data management, telehealth infrastructure, reliable network access for clinicians.",
+  //   solution: "We provide IT support that understands the critical importance of patient care and data privacy. Our technicians can assist with on-site needs in clinics, hospitals, and administrative offices, ensuring your technology supports efficient and secure healthcare delivery.",
+  // },
+  {
+    name: "Real Estate & Property Management",
+    needs: "Office network setup for agencies, IT support for property management software, smart building technology integration, secure access systems, mobile connectivity for agents in the field.",
+    solution: "From setting up new branch offices to supporting the technology that powers your property portfolios, we provide reliable IT services that help real estate professionals stay connected and efficient.",
+  },
+  {
+    name: "Logistics & Transportation",
+    needs: "Warehouse management systems (WMS), tracking and telematics device support, dispatch system connectivity, ruggedized device maintenance for field operatives, supply chain technology integration.",
+    solution: "We support the technology that keeps your supply chain moving. Our technicians can provide on-site assistance at distribution centers, depots, and offices to ensure your logistics operations run without IT hitches.",
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Expert On-Site IT Support, Tailored to Your Industry's Unique Demands."
+    subtitle="At IT Technicians, we understand that 'IT support' isn't a one-size-fits-all solution. Different industries face unique technological challenges, regulatory requirements, and operational nuances. Our nationwide network of field technicians includes professionals with experience across a variety of sectors, enabling us to provide knowledgeable, relevant support that addresses your specific needs and helps you leverage technology for a competitive edge."
+  />
+
+  <Content
+    title="Industries We Empower"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mb-12 md:mb-16' }}
+  >
+    <Fragment slot="content">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {industries.map(industry => (
+          <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+            <h3 class="text-2xl font-semibold text-primary-600 dark:text-primary-400 mb-3">{industry.name}</h3>
+            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">Common IT Needs:</h4>
+            <p class="text-muted dark:text-slate-400 mb-4 text-sm">{industry.needs}</p>
+            <h4 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">How ITT Helps:</h4>
+            <p class="text-muted dark:text-slate-400 text-sm">{industry.solution}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center mt-12 text-lg text-muted dark:text-slate-300">
+        Don't see your industry? Our adaptable technicians have broad experience. 
+        <a href="/contact" class="text-primary-600 dark:text-primary-400 hover:underline font-semibold">Contact us</a> to discuss your specific needs!
+      </p>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Tailored Solutions for Your Sector"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-16 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <p class="text-center text-lg text-muted dark:text-slate-400 mb-6">No matter your industry, IT Technicians offers:</p>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-3xl mx-auto list-inside list-disc text-muted dark:text-slate-400">
+        <li>Technicians with relevant experience where possible.</li>
+        <li>An understanding of common industry-specific software and hardware.</li>
+        <li>A commitment to learning the unique aspects of your business operations.</li>
+        <li>Flexible service models to suit your industry's pace and demands.</li>
+        <li>AI-Powered Onboarding to quickly familiarize technicians with your sector-specific requirements.</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    title="Get Industry-Aware IT Support That Drives Your Business."
+    subtitle="Partner with IT Technicians for on-site IT support that understands the nuances of your industry. Let's discuss how we can provide tailored solutions to meet your specific challenges and goals."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Discuss Your Industry Needs',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout> 

@@ -1,0 +1,99 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro'; // For "Your Partner"
+import Steps from '~/components/widgets/Steps.astro'; // For "Our Approach"
+
+const metadata = {
+  title: "Expert IT Project Support & Deployment | IT Technicians",
+  description: "Execute IT projects flawlessly with ITT. We provide skilled technicians for installations, upgrades & deployments, on time and on budget. Discuss your IT project today!",
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Execute Your IT Projects Flawlessly, On Time and On Budget."
+    subtitle="Embarking on a new IT initiative? Whether it's a nationwide hardware refresh, a complex software rollout, office expansions, or a critical infrastructure upgrade, successful project execution is key. IT Technicians provides skilled, experienced field technicians and project support to ensure your IT projects are completed efficiently, correctly, and with minimal disruption to your core business."
+  />
+
+  <Content
+    title="Your Partner for Successful IT Projects"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ul class="space-y-4">
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Skilled Technician Deployment</h3>
+          <p class="text-muted dark:text-slate-400">We provide the hands-on expertise needed for physical installations, configurations, migrations, and testing across all your locations.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Nationwide Reach, Local Execution</h3>
+          <p class="text-muted dark:text-slate-400">Coordinate multi-site projects seamlessly with our national network of technicians, ensuring consistent quality and execution everywhere.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Expertise Across Diverse Technologies</h3>
+          <p class="text-muted dark:text-slate-400">Our technicians are proficient in a wide array of hardware, software, and network systems, ready to tackle your specific project requirements.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Scalable Resources</h3>
+          <p class="text-muted dark:text-slate-400">Whether you need a single technician for a small deployment or a team for a large-scale rollout, we can scale our resources to match your project's scope.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Reduced Burden on Your Internal Team</h3>
+          <p class="text-muted dark:text-slate-400">Let your IT staff focus on core strategic tasks while our technicians handle the time-consuming, on-the-ground project work.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Cost-Effective Project Delivery</h3>
+          <p class="text-muted dark:text-slate-400">Avoid the costs of hiring temporary staff or diverting internal resources. Our project-based model offers predictable pricing and efficient execution.</p>
+        </li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Types of IT Projects We Support"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ul class="list-disc list-inside space-y-2 text-muted dark:text-slate-400">
+        <li>Hardware installations, upgrades, and refreshes (desktops, laptops, servers, peripherals).</li>
+        <li>Software deployment, configuration, and updates.</li>
+        <li>Network infrastructure setup, cabling, and wireless deployments.</li>
+        <li>Office moves, expansions, and new site setups.</li>
+        <li>Point-of-Sale (POS) system installations and upgrades.</li>
+        <li>Data migration assistance.</li>
+        <li>Security system (cameras, access control) installations.</li>
+        <li>And much more – if it involves on-site IT work, we can help!</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Our Approach to Project Success"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ol class="list-decimal list-inside space-y-4 text-muted dark:text-slate-400">
+        <li><strong>Scope Definition:</strong> We work with you to clearly define project objectives, deliverables, timelines, and specific technical requirements.</li>
+        <li><strong>Resource Planning:</strong> We assign the right technicians with the necessary skills and ensure they are fully briefed.</li>
+        <li><strong>Deployment & Execution:</strong> Our technicians carry out the on-site work according to the project plan, adhering to best practices and your standards.</li>
+        <li><strong>Communication & Reporting:</strong> We provide regular updates on project progress and address any challenges proactively. (More extensive for projects utilizing our Project Management Services).</li>
+        <li><strong>Completion & Handover:</strong> We ensure all tasks are completed to your satisfaction and provide necessary documentation.</li>
+      </ol>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    title="Have an Upcoming IT Project? Let's Make It a Success."
+    subtitle="Partner with IT Technicians for reliable, expert support on your next IT initiative. We bring the skills, resources, and national reach to get the job done right."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Discuss Your Project Needs',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout> 

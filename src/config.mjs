@@ -1,0 +1,1 @@
+export const ANNOUNCEMENT_CONTENT = 'Astro v5.7 is now available! »'; 

@@ -1,0 +1,97 @@
+---
+// src/pages/services/dedicated-technicians.astro
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Steps from '~/components/widgets/Steps.astro'; // For "How It Works"
+import Features3 from '~/components/widgets/Features3.astro'; // For "Why Choose" and "Is it Right"
+
+const metadata = {
+  title: "Dedicated IT Technician Assignments | Consistent On-Site Support | IT Technicians",
+  description: "Experience unmatched IT consistency with a dedicated technician who knows your business. Reduce downtime & boost productivity. Learn about ITT's dedicated support!",
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Build a Stronger IT Foundation with a Dedicated On-Site Technician"
+    subtitle="Imagine having an IT expert who knows your business, your systems, and your team as well as you do. With IT Technicians' Dedicated Technician Assignments, that's exactly what you get. We place a skilled, pre-vetted IT professional at your service, becoming a consistent, reliable extension of your team. Say goodbye to the inefficiencies of constantly re-educating rotating contractors and hello to proactive, deeply integrated IT support that drives your business forward."
+  />
+
+  <Content
+    title="Why Choose a Dedicated Technician?"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ul class="space-y-4">
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Unmatched Consistency & Familiarity</h3>
+          <p class="text-muted dark:text-slate-400">Your dedicated technician develops an intimate understanding of your IT environment, specific configurations, and common issues. This leads to faster troubleshooting, more effective problem-solving, and less repetitive questioning for your staff.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Proactive Support & Preventative Maintenance</h3>
+          <p class="text-muted dark:text-slate-400">Beyond just fixing problems, a dedicated technician can identify potential issues before they escalate, perform regular maintenance, and recommend improvements to optimize your systems for peak performance and longevity.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Improved Efficiency & Reduced Downtime</h3>
+          <p class="text-muted dark:text-slate-400">With a deep knowledge base and consistent presence, your technician can resolve issues more quickly, minimizing costly downtime and keeping your operations running smoothly.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Seamless Integration with Your Team</h3>
+          <p class="text-muted dark:text-slate-400">Our technicians work to understand your company culture and processes, ensuring they operate as a true partner, not just an outsourced resource.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Significant Long-Term Cost Savings</h3>
+          <p class="text-muted dark:text-slate-400">Reduce the hidden costs associated with vendor churn, repeated onboarding, and the inefficiencies of ad-hoc support. A dedicated technician offers predictable budgeting and greater value over time.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">AI-Powered Onboarding for Rapid Effectiveness</h3>
+          <p class="text-muted dark:text-slate-400">Even dedicated technicians benefit from our AI platform, which provides them with crucial client-specific information from day one, ensuring they are productive and aligned with your needs faster than ever.</p>
+        </li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="How Our Dedicated Technician Service Works"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ol class="list-decimal list-inside space-y-4 text-muted dark:text-slate-400">
+        <li><strong>Needs Assessment:</strong> We start by understanding your specific IT requirements, business goals, and the challenges you face across your locations.</li>
+        <li><strong>Technician Matching:</strong> We carefully select a pre-vetted technician from our nationwide network whose skills and experience align perfectly with your needs.</li>
+        <li><strong>AI-Powered Onboarding:</strong> Your selected technician is rapidly brought up to speed on your systems, protocols, and preferences through our advanced AI onboarding platform.</li>
+        <li><strong>Seamless Integration:</strong> Your technician begins working with your team, providing ongoing support, maintenance, and strategic advice.</li>
+        <li><strong>Continuous Improvement:</strong> We maintain regular communication to ensure your needs are being met and to adapt our service as your business evolves.</li>
+      </ol>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Is Dedicated Support Right for Your Business?"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <p class="text-muted dark:text-slate-400 mb-4">This service is ideal for:</p>
+      <ul class="list-disc list-inside space-y-2 text-muted dark:text-slate-400">
+        <li>Businesses with multiple locations requiring consistent IT presence and knowledge.</li>
+        <li>Organizations looking to reduce the overhead and complexity of managing numerous IT contractors.</li>
+        <li>Companies that value proactive IT management over reactive fixes.</li>
+        <li>Businesses seeking a long-term, stable IT support partner.</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    title="Ready for IT Support That Truly Understands Your Business?"
+    subtitle="Invest in a dedicated IT technician and experience the difference that consistent, expert, and personalized support can make. Let's discuss how we can tailor a dedicated solution to your unique operational needs and budget."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Discuss Your Dedicated Technician Needs',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout> 

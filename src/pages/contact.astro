@@ -3,77 +3,155 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Headline from '~/components/ui/Headline.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact IT Technicians | Get Expert IT Support Today',
+  description: "Ready for reliable IT support? Contact IT Technicians for a free consultation. Let\'s discuss your IT needs and build a smarter solution for your business.",
 };
+
+// Placeholder for form submission confirmation
+// In a real app, this would be driven by query params or state after form submission
+const formSubmitted = false; // Set to true to test confirmation message
+const confirmationMessage = "Thank you for reaching out! We\'ve received your message and one of our IT solutions specialists will be in touch within 24 business hours. If your need is urgent, please call us directly at 1-800-PRE-EMPT (placeholder).";
+const contactEmail = "sales@ittechnicians.com"; // For the mailto link
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-screen-xl">
+    <Headline
+      title="Let's Talk About Your IT Needs."
+      subtitle="Ready to experience reliable, expert IT support tailored to your multi-location business? Whether you have a specific project in mind, need urgent assistance, or want to explore how our dedicated technicians can transform your IT operations, we're here to help. Reach out today, and let's build a smarter IT solution for your business."
+      class="text-center mb-12 md:mb-16"
+    />
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+    {formSubmitted && (
+      <div class="mb-8 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md text-center">
+        {confirmationMessage}
+      </div>
+    )}
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <!-- Contact Form Section -->
+      <div class="bg-white dark:bg-slate-800 p-6 sm:p-8 shadow-xl rounded-lg">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-slate-200">Send Us a Message</h2>
+        <form
+          action={`mailto:${contactEmail}`}
+          method="POST"
+          enctype="text/plain"
+          class="space-y-6"
+        >
+          <div>
+            <label for="full_name" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Full Name*</label>
+            <input type="text" name="full_name" id="full_name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-700 dark:text-white sm:text-sm" />
+          </div>
 
-  <!-- Features2 Widget ************** -->
+          <div>
+            <label for="company_name" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Company Name*</label>
+            <input type="text" name="company_name" id="company_name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-700 dark:text-white sm:text-sm" />
+          </div>
 
-  <Features2
-    title="We are here to help!"
-    items={[
-      {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+          <div>
+            <label for="work_email" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Work Email*</label>
+            <input type="email" name="work_email" id="work_email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-700 dark:text-white sm:text-sm" />
+          </div>
+
+          <div>
+            <label for="phone_number" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Phone Number*</label>
+            <input type="tel" name="phone_number" id="phone_number" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-700 dark:text-white sm:text-sm" />
+          </div>
+
+          <div>
+            <label for="services" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Service(s) of Interest</label>
+            <select id="services" name="services" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 dark:border-slate-600 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md dark:bg-slate-700 dark:text-white">
+              <option>Dedicated Technician Assignments</option>
+              <option>Hourly Technician Hire</option>
+              <option>Emergency Support</option>
+              <option>Project-Based Work</option>
+              <option>Project Management Services</option>
+              <option>Not Sure / General Inquiry</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-slate-300">How Can We Help You?*</label>
+            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-slate-700 dark:text-white sm:text-sm"></textarea>
+          </div>
+
+          <div class="flex items-center">
+            <input id="privacy_policy" name="privacy_policy" type="checkbox" required class="h-4 w-4 text-primary-600 border-gray-300 dark:border-slate-600 rounded focus:ring-primary-500 dark:bg-slate-700" />
+            <label for="privacy_policy" class="ml-2 block text-sm text-gray-900 dark:text-slate-300">
+              I agree to the <a href="/privacy-policy" class="hover:underline text-primary-600 dark:text-primary-400">Privacy Policy</a>.*
+            </label>
+          </div>
+
+          <div>
+            <button type="submit" class="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:bg-primary-500 dark:hover:bg-primary-600">
+              Get My Free Consultation
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Alternative Contact Methods & Reassurance -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-slate-200">Other Ways to Connect</h3>
+          <div class="space-y-3 text-gray-600 dark:text-slate-400">
+            <p>
+              <strong>Email (Sales/General Inquiries):</strong>
+              <a href="mailto:sales@ittechnicians.com" class="text-primary-600 dark:text-primary-400 hover:underline">sales@ittechnicians.com</a>
+            </p>
+            <p>
+              <strong>Email (Support):</strong>
+              <a href="mailto:support@ittechnicians.com" class="text-primary-600 dark:text-primary-400 hover:underline">support@ittechnicians.com</a>
+            </p>
+            <p><strong>Toll-Free:</strong> 1-800-XXX-XXXX (Placeholder)</p>
+            <p><strong>Direct Line for Urgent Needs/Emergency Support:</strong> 1-888-YYY-YYYY (Placeholder - Prominent)</p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-slate-200">Business Hours</h3>
+          <div class="space-y-1 text-gray-600 dark:text-slate-400">
+            <p>Monday - Friday: 8:00 AM - 6:00 PM (EST - Assuming Eastern Time)</p>
+            <p>Emergency Support: 24/7/365</p>
+          </div>
+        </div>
+        
+        <!-- Optional Physical Address -->
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-slate-200">Our Headquarters</h3>
+           <p class="text-gray-600 dark:text-slate-400">
+             IT Technicians HQ<br />
+             123 Tech Drive, Suite 100<br />
+             Innovation City, ST 54321
+           </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800 dark:text-slate-200">Our Commitment to You</h3>
+          <p class="text-gray-600 dark:text-slate-400">
+            "At IT Technicians, your business continuity is our priority. We strive to respond to all inquiries promptly and provide solutions that make a real difference. We look forward to partnering with you."
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Call to Action Section -->
+    <section class="mt-16 pt-12 border-t border-gray-200 dark:border-slate-700 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-slate-200 mb-4">
+        Don't Let IT Challenges Slow You Down.
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+        Contact us now for a no-obligation consultation and discover how IT Technicians can provide the reliable, nationwide IT support your business deserves.
+      </p>
+      <a
+        href="tel:1-800-XXX-XXXX"
+        class="inline-block py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-secondary-600 hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500 dark:bg-secondary-500 dark:hover:bg-secondary-600"
+      >
+        Call Us Now: 1-800-XXX-XXXX (Placeholder)
+      </a>
+    </section>
+  </section>
 </Layout>

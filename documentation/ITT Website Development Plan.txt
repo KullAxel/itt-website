@@ -1,0 +1,315 @@
+﻿ITT Website Development Plan
+Project Goal: To develop a professional, conversion-focused website for IT Technicians (ITT) using the Astrowind template, with development tasks executed by the Cursor AI developer agent, facilitated by you.
+Key Resources:
+* ITT Technicians Business Plan Long.pdf (referred to as "Business Plan")
+* Website Development Plan for IT Technicians (ITT).pdf (referred to as "Website Plan")
+* Astrowind GitHub Repository: https://github.com/onwidget/astrowind
+* Cursor AI Developer Agent
+General Principles for Working with Cursor AI:
+* Small, Atomic Tasks: Break down each step in this plan further into the smallest logical coding task for Cursor AI.
+* Clear Context: For each task, provide Cursor AI with relevant excerpts from the Business Plan, Website Plan, and a persistent project context document (which we will build).
+* Specific Instructions: Clearly state the desired outcome, files to modify, Astrowind components to use/adapt, and specific content to include.
+* Iterative Refinement: Review Cursor AI's output carefully and be prepared to provide feedback for revisions.
+Phase 0: Project Setup & Foundation
+Objective: Establish the development environment, understand the Astrowind template, and create initial context documentation for Cursor AI.
+* Task 0.1: Environment Setup with Astrowind
+   * Instructions for Facilitator:
+      1. Guide Cursor AI (or perform manually if simpler for setup) to fork or use the Astrowind GitHub template to create a new repository for the ITT website.
+      2. Instruct Cursor AI to clone the repository to the local development environment.
+      3. Have Cursor AI install all necessary dependencies (e.g., npm install as per Astrowind docs).
+      4. Instruct Cursor AI to run the local development server (e.g., npm run dev) to confirm the template is working.
+   * Documentation to Prepare for Cursor AI (Context for this task & ongoing project context):
+      * File: project_context.md (Create this file)
+      * Content:
+         * Project Name: IT Technicians (ITT) Website
+         * GitHub Repository URL: [Link to the new repository]
+         * Local Setup Commands: git clone [URL], npm install, npm run dev
+         * Core Technologies: Astro, Tailwind CSS, Markdown (MDX for blog if used by Astrowind).
+         * Primary Goal: Build a website based on Astrowind template, reflecting ITT's business and marketing goals.
+* Task 0.2: Understanding Astrowind Structure
+   * Instructions for Facilitator:
+      1. Prompt Cursor AI to analyze and list key directories in the Astrowind template (e.g., src/pages, src/components, src/layouts, src/assets, configuration files like astro.config.mjs, tailwind.config.cjs).
+      2. Ask Cursor AI to identify how to create new pages and how content is typically structured within Astrowind components.
+      3. Inquire how styling (colors, fonts, layout) is primarily managed (likely Tailwind CSS utility classes and its configuration file).
+   * Documentation to Prepare for Cursor AI (Add to project_context.md):
+      * Key Astrowind Directories: [List identified by Cursor AI]
+      * Page Creation: [Brief note on process, e.g., "New .astro files in src/pages/"]
+      * Component Usage: [Brief note, e.g., "Components are in src/components/ and imported into pages/layouts"]
+      * Styling Approach: "Primarily use Tailwind CSS utility classes. Global styles/customizations likely in tailwind.config.cjs or a main CSS file in src/assets/styles/."
+* Task 0.3: Consolidate Core ITT Information for AI
+   * Instructions for Facilitator:
+      1. This task is for you to create a summary document or add to project_context.md.
+      2. Extract key information from the "Business Plan" and "Website Plan" that will be frequently referenced.
+   * Documentation to Prepare for Cursor AI (Add to project_context.md or a separate itt_brief.md linked from it):
+      * ITT Mission: (Copy from Business Plan, Page 1)
+      * ITT Vision: (Copy from Business Plan, Page 1)
+      * ITT Unique Value Proposition (UVP): (Summarize from Business Plan, Page 1 & Website Plan, Page 1, e.g., "Dedicated technicians, AI-powered onboarding, consistent high-quality support, cost reduction for clients.")
+      * Core Services List: (From Business Plan, Page 7 & Website Plan, Page 1: Dedicated Technician Assignments, Hourly Technician Hire, Emergency Support, Project-Based Work, Project Management Services)
+      * Target Audience/Market: (Summarize from Business Plan, Page 4 & Website Plan, Page 1: Large enterprises, mid-sized businesses, IT service providers; Decision-makers: CIOs, IT Managers, Vendor Managers, Operations Directors).
+      * Website Primary Goal: "Generate qualified leads for ITT's services." (Website Plan, Page 2)
+      * Key Website Pages (initial list): Homepage, Services (overall & individual), Why ITT/Our Difference, Industries Served, Case Studies/Testimonials, Blog/Resources, Contact Us, About Us. (Website Plan, Page 2-3)
+Phase 1: Homepage Construction
+Objective: Build the homepage section by section, adapting Astrowind components and integrating ITT's specific content and messaging. (Reference: Website Plan, Page 2)
+* Task 1.1: Homepage - Hero Section
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to identify a suitable "Hero" component in Astrowind.
+      2. Provide Cursor AI with the specific content for the headline, supporting text, and primary CTA.
+   * Documentation to Prepare for Cursor AI (Prompt content):
+      * Objective: Implement the Hero section on src/pages/index.astro (or equivalent main page file).
+      * Astrowind Component: Use a pre-existing Hero component.
+      * Headline: "Reliable, Dedicated On-Site IT Technicians, Nationwide. Cut Costs & Boost Efficiency." (From Website Plan, Page 2)
+      * Supporting Text: "ITT solves inconsistent, costly IT support for multi-location businesses with dedicated technicians and AI-powered onboarding." (Summarized)
+      * Primary CTA Button Text: "Request a Free Consultation"
+      * CTA Link: /contact (or a dedicated quote/consultation page later)
+      * Imagery: Use a relevant placeholder image initially if specific assets aren't ready.
+      * Reference: project_context.md, itt_brief.md.
+* Task 1.2: Homepage - "Problem ITT Solves / Our Solution" Section
+   * Instructions for Facilitator:
+      1. Ask Cursor AI to use an Astrowind "Features" or "Content" section component.
+      2. Provide content outlining the problem and ITT's solution.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Add a section below the Hero explaining the value proposition.
+      * Content Structure:
+         * Problem: Briefly describe challenges like "inconsistent service quality, higher costs, inefficiencies from multiple subcontractors for businesses with multiple locations." (Business Plan, Page 2)
+         * Solution: Briefly describe "ITT provides a direct connection to dedicated IT technicians, improving service quality, reducing costs, and enhancing satisfaction. Technicians become familiar with client's tech." (Business Plan, Page 2)
+      * Reference: project_context.md, itt_brief.md, Business Plan (Page 2).
+* Task 1.3: Homepage - Services Overview Section
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to use a card-based layout or a "Features" component from Astrowind.
+      2. Provide the list of services and brief descriptions.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Briefly introduce ITT's core services with links to future detailed pages.
+      * Services to list (from itt_brief.md):
+         * Dedicated Technician Assignments (Link: /services/dedicated-technicians)
+         * Hourly Technician Hire (Link: /services/hourly-hire)
+         * Emergency Support (Link: /services/emergency-support)
+         * Project-Based Work (Link: /services/project-based-work)
+         * Project Management Services (Link: /services/project-management)
+      * For each service: Include a 1-sentence descriptive teaser.
+      * Reference: project_context.md, itt_brief.md.
+* Task 1.4: Homepage - "Why ITT?" / UVP Highlights Section
+   * Instructions for Facilitator:
+      1. Have Cursor AI adapt an Astrowind component (e.g., icon list, features grid).
+      2. Provide the key differentiators.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Highlight ITT's competitive advantages.
+      * Key Advantages to list (from Business Plan, Page 3 & 5, Website Plan, Page 3):
+         * Dedicated Technicians (Consistent support, deep understanding)
+         * AI-Powered Onboarding (Quick adaptation, quality service)
+         * Cost Efficiency (Reduced overhead for clients)
+         * Extensive Network (Pre-vetted professionals nationwide)
+         * Flexible Services (Hourly, emergency, project-based)
+      * Consider using icons for visual appeal.
+      * Reference: project_context.md, itt_brief.md.
+* Task 1.5: Homepage - Testimonials/Social Proof Placeholder Section
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to create a section for client testimonials (use placeholders).
+      2. Refer to Astrowind for any existing testimonial components.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Build trust by showcasing client satisfaction (initially with placeholders).
+      * Content: "Trusted By Businesses Like Yours." Include space for 2-3 short quotes, client names, and company (e.g., "Quote placeholder..." - Client Name, Company XYZ).
+      * Consider space for client logos if available later.
+      * Reference: Website Plan (Page 3 - "Leverage social proof").
+* Task 1.6: Homepage - Primary Call to Action (CTA) Section
+   * Instructions for Facilitator:
+      1. Ask Cursor AI to use/adapt an Astrowind "Call-to-Action" widget.
+      2. Provide compelling text.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Drive conversion with a clear CTA before the footer.
+      * Headline Example: "Ready to Revolutionize Your IT Support?"
+      * Supporting Text Example: "Partner with IT Technicians for reliable, expert on-site support across all your locations. Get a personalized plan today."
+      * CTA Button Text: "Get a Custom Quote"
+      * CTA Link: /contact or /get-quote
+      * Reference: Website Plan (Page 2, 4).
+Phase 2: Core Internal Pages
+Objective: Develop the main internal pages, detailing ITT's services and company information.
+* Task 2.1: Create Service Landing Page (/services)
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to create a new page at /services.
+      2. This page should provide an overview of all services, with links to individual service pages.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Create a hub page for all ITT services.
+      * File: src/pages/services.astro (or similar, based on Astrowind structure).
+      * Content:
+         * Page Title: "Our IT Support Services"
+         * Introductory paragraph about ITT's comprehensive service offerings.
+         * List each core service (from itt_brief.md) with a 2-3 sentence description and a clear link/button to its dedicated page (e.g., /services/dedicated-technicians).
+      * Layout: Use a clean, organized layout (e.g., cards, detailed list items).
+      * Reference: project_context.md, itt_brief.md.
+* Task 2.2: Create Individual Service Pages (Repeat for each service)
+   * Services: Dedicated Technicians, Hourly Technician Hire, Emergency Support, Project-Based Work, Project Management Services.
+   * Instructions for Facilitator (for each service page):
+      1. Instruct Cursor AI to create a new page (e.g., src/pages/services/dedicated-technicians.astro).
+      2. Provide specific content, benefits, and CTAs for that service.
+   * Documentation to Prepare for Cursor AI (Example for "Dedicated Technicians"):
+      * Objective: Detail the "Dedicated Technician Assignments" service.
+      * File: src/pages/services/dedicated-technicians.astro.
+      * Page Title: "Dedicated IT Technician Assignments"
+      * Content:
+         * Elaborate on benefits: "consistent support, deeper understanding of client systems, improved efficiency, proactive maintenance, cost savings." (Business Plan, Page 7; Website Plan, Page 2)
+         * Explain how it works (e.g., long-term placement).
+         * Target audience for this service.
+      * CTA: "Discuss Your Dedicated Technician Needs" (linking to contact page or specific form).
+      * Reference: project_context.md, itt_brief.md, Business Plan (Page 7), Website Plan (Page 2).
+      * (Adapt this documentation for each of the other service pages.)
+* Task 2.3: Create "About Us" Page (/about)
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to create src/pages/about.astro.
+      2. Provide content covering ITT's story, mission, vision, and values.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Share ITT's story and build connection.
+      * File: src/pages/about.astro.
+      * Content:
+         * Company Overview/Founding Story (Founder's experience as field IT engineer - Business Plan, Page 1).
+         * Mission Statement (from itt_brief.md).
+         * Vision Statement (from itt_brief.md).
+         * Company Culture: "Customer-centric, Innovation, Collaboration, Integrity." (Business Plan, Page 7).
+         * Team (placeholder for future, or focus on founder's expertise).
+      * Reference: project_context.md, itt_brief.md, Business Plan (Pages 1, 2, 7), Website Plan (Page 3).
+* Task 2.4: Create "Why ITT?" / "Our Difference" Page (/why-itt)
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to create src/pages/why-itt.astro.
+      2. This page expands on the UVPs highlighted on the homepage.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Detail ITT's competitive advantages and build credibility.
+      * File: src/pages/why-itt.astro.
+      * Content: Elaborate on each key advantage from Task 1.4 (Dedicated Technicians, AI Integration, Cost-Effective Solutions, Scalable Network, Customer-Centric Approach). Provide more detail and examples if possible.
+      * Reference: project_context.md, itt_brief.md, Business Plan (Pages 3, 5-6), Website Plan (Page 3).
+* Task 2.5: Create "Industries Served" Page (/industries)
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to create src/pages/industries.astro.
+      2. List target industries and briefly explain ITT's tailored approach.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Show expertise in specific sectors.
+      * File: src/pages/industries.astro.
+      * Content:
+         * Page Title: "IT Support for Your Industry"
+         * Introduction: Explain ITT understands unique industry challenges.
+         * Target Industries (from Business Plan, Page 4 & 9; Website Plan, Page 1): Retail, Hospitality, Finance, Healthcare, Real Estate.
+         * For each industry, a brief statement about common IT needs and how ITT can help (can be expanded later).
+      * Reference: project_context.md, itt_brief.md.
+Phase 3: Blog Structure & Contact Page
+Objective: Set up the blog functionality and create a functional contact page. Astrowind likely has good support for blogs.
+* Task 3.1: Basic Blog Setup & Placeholder Posts
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to configure Astrowind's blog functionality (check for MDX support, RSS, categories/tags if available).
+      2. Have Cursor AI create 1-2 placeholder blog posts.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Enable the blog and test its structure.
+      * Main Blog Page: /blog (listing of posts).
+      * Individual Post URL Structure: e.g., /blog/[slug].
+      * Placeholder Post 1: Title "The Importance of Proactive IT Maintenance", short lorem ipsum content.
+      * Placeholder Post 2: Title "5 Benefits of Dedicated IT Technicians for Multi-Location Businesses", short lorem ipsum content.
+      * Check for features like author, date, categories/tags in Astrowind's blog components.
+      * Reference: Astrowind documentation, Website Plan (Page 3 - "Blog/Resources Section").
+* Task 3.2: Create "Contact Us" Page (/contact)
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to create src/pages/contact.astro.
+      2. Specify form fields and contact information.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Enable visitors to easily get in touch.
+      * File: src/pages/contact.astro.
+      * Content:
+         * Contact Form Fields: Name, Company, Email, Phone, Service(s) of Interest (optional dropdown), Message/Brief Description of Needs. (Website Plan, Page 3)
+         * Contact Information:
+            * Phone: [Use placeholder from Business Plan, Page 15, or a dedicated business line]
+            * Email: [Use placeholder from Business Plan, Page 15, or a dedicated support/sales email]
+            * Address (Optional, if there's a main office, though the model is field-based).
+         * Consider a brief message like "We'll get back to you within 24 business hours."
+      * Form Submission: For now, this might be a simple mailto: link or require backend setup later. Clarify the initial desired behavior for Cursor AI.
+      * Reference: project_context.md, Website Plan (Page 3).
+Phase 4: Essential Features, Content Integration & Basic SEO
+Objective: Implement site-wide navigation, footers, integrate initial content, and add basic SEO elements.
+* Task 4.1: Configure Main Navigation & Footer
+   * Instructions for Facilitator:
+      1. Instruct Cursor AI to modify Astrowind's header/navigation component.
+      2. Provide the list of navigation links.
+      3. Instruct Cursor AI to modify Astrowind's footer component.
+   * Documentation to Prepare for Cursor AI:
+      * Objective: Ensure easy site navigation and provide essential footer information.
+      * Header Navigation Links:
+         * Home (/)
+         * Services (/services) - Potentially with a dropdown for individual service pages if Astrowind supports it easily.
+         * Industries (/industries)
+         * Why ITT (/why-itt)
+         * About Us (/about)
+         * Blog (/blog)
+         * Contact Us (/contact)
+      * Footer Content:
+         * Copyright © [Current Year] IT Technicians. All Rights Reserved.
+         * Link to Privacy Policy page (e.g., /privacy-policy - create placeholder page).
+         * Link to Terms of Service page (e.g., /terms-of-service - create placeholder page).
+         * Optional: Social media icons (if applicable).
+         * Optional: Short contact info or link to contact page.
+      * Reference: Astrowind components for header/footer.
+* Task 4.2: Initial Content Population & Review
+   * Instructions for Facilitator:
+      1. Go through each created page (Homepage, Services, About, etc.).
+      2. For each page, instruct Cursor AI to replace placeholder text (like Lorem Ipsum) with actual draft content extracted or adapted from the Business Plan and Website Plan. This will likely be multiple small tasks for Cursor AI, one per page or section.
+   * Documentation to Prepare for Cursor AI (Example for one page - adapt for others):
+      * Objective: Populate the /about page with relevant content.
+      * File: src/pages/about.astro.
+      * Content Sections to fill:
+         * Mission: (Use text from itt_brief.md).
+         * Vision: (Use text from itt_brief.md).
+         * Our Story: (Elaborate on "Founded by an experienced field IT engineer..." from Business Plan, Page 1).
+         * Our Culture: (Elaborate on "Customer-Centric, Innovation, Collaboration, Integrity" from Business Plan, Page 7).
+      * Ensure all template placeholder text is removed or replaced.
+      * Reference: itt_brief.md, Business Plan, Website Plan.
+* Task 4.3: Basic SEO Placeholders (Titles & Meta Descriptions)
+   * Instructions for Facilitator:
+      1. For each main page, instruct Cursor AI to add/update the HTML <title> tag and <meta name="description"> content.
+      2. Provide specific text for each, incorporating keywords from the Website Plan.
+   * Documentation to Prepare for Cursor AI (Example for Homepage - adapt for others):
+      * Objective: Implement basic on-page SEO for key pages.
+      * File: src/pages/index.astro (and other page files).
+      * Homepage:
+         * Title: "Dedicated On-Site IT Technicians Nationwide | IT Technicians"
+         * Meta Description: "ITT offers reliable, dedicated IT field support for businesses with multiple locations. Enhance efficiency and reduce costs with our AI-powered onboarding and expert technicians."
+      * Services Page:
+         * Title: "Comprehensive IT Support Services for Businesses | IT Technicians"
+         * Meta Description: "Explore IT Technicians' full range of IT services, including dedicated technicians, hourly support, emergency response, and project management."
+      * (Create similar for About Us, Contact Us, main Blog page, key service pages, focusing on relevant keywords from Website Plan, Page 5)
+      * Reference: Website Plan (Page 5 - "Keyword Research", "On-Page SEO").
+Phase 5: Cursor AI Documentation & Workflow Refinement
+Objective: Formalize the documentation process for Cursor AI and refine the collaborative workflow.
+* Task 5.1: Standardize Prompt Structure for Cursor AI
+   * Instructions for Facilitator:
+      1. Based on your experiences in Phases 0-4, develop a consistent template for prompting Cursor AI.
+   * Documentation to Create (for your own use, and to share with me if you want feedback):
+      * Prompt Template:
+         * Task ID: (e.g., 2.2.1 - Dedicated Tech Page Content)
+         * Objective: (Clear goal of the task)
+         * File(s) to Modify/Create:
+         * Astrowind Component(s) to Use/Adapt: (If applicable)
+         * Specific Content/Logic to Implement: (Provide exact text, or detailed logic steps)
+         * Key Information/Context from: (project_context.md, itt_brief.md, specific PDF pages)
+         * Acceptance Criteria: (How to know the task is done correctly)
+         * Notes/Questions for Cursor AI: (If any)
+* Task 5.2: Review and Update project_context.md and itt_brief.md
+   * Instructions for Facilitator:
+      1. Ensure these central context documents are up-to-date with any decisions made or new information gathered during development.
+      2. These are living documents.
+   * Action: Review and update these files.
+Phase 6: Review, Responsiveness, & Iteration
+Objective: Test the website across devices, review against goals, and plan for ongoing improvements.
+* Task 6.1: Responsiveness Testing & Bug Fixing
+   * Instructions for Facilitator:
+      1. Manually test all pages on different screen sizes (desktop, tablet, mobile). Astrowind is designed to be responsive, but custom changes need checking.
+      2. Document any layout issues, broken elements, or bugs.
+      3. For each issue, create a small, specific task for Cursor AI to fix, using your standardized prompt structure.
+   * Documentation to Prepare for Cursor AI (for each bug):
+      * Objective: Fix [specific responsiveness issue] on [page/component].
+      * Description of Bug: (e.g., "Navigation menu overlaps content on screens smaller than 768px").
+      * File(s) Involved: (e.g., src/components/Header.astro, relevant CSS/JS).
+      * Expected Behavior: (e.g., "Menu should stack vertically and be scrollable").
+* Task 6.2: Content Accuracy and Completeness Review
+   * Instructions for Facilitator:
+      1. Review all website content against the Business Plan and Website Plan for accuracy, completeness, and tone.
+      2. List any content changes needed.
+      3. For each change, create a small task for Cursor AI.
+* Task 6.3: Prepare for Initial User Feedback & Iteration
+   * Instructions for Facilitator:
+      1. Once the site is largely complete and tested, plan to get feedback from a small group of internal users or stakeholders.
+      2. Be prepared to iterate on design and content based on this feedback, breaking down changes into tasks for Cursor AI.
+This plan provides a structured approach. Remember that flexibility is important. You may need to adjust tasks or their order based on how development progresses with Cursor AI and the specifics of the Astrowind template. Consistent, clear communication and context for Cursor AI will be the keys to a successful project.

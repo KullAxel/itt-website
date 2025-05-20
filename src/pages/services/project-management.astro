@@ -1,0 +1,109 @@
+---
+// src/pages/services/project-management.astro
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro'; // For benefits and inclusions
+
+const metadata = {
+  title: "IT Project Management Services | Expert Coordination & Delivery | IT Technicians",
+  description: "Ensure your complex IT initiatives succeed with ITT's expert project management. We deliver results, managing projects from conception to completion.",
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Ensure Your Complex IT Initiatives Deliver Results with Expert Project Management."
+    subtitle="Large-scale IT projects involve numerous moving parts, tight deadlines, and critical business outcomes. Without expert oversight, they can easily derail, leading to budget overruns and missed objectives. IT Technicians' Project Management Services provide the experienced leadership and meticulous coordination needed to navigate the complexities of your most important IT initiatives, from conception to successful completion."
+  />
+
+  <Content
+    title="Why Entrust Your IT Projects to Our Managers?"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ul class="space-y-4">
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Experienced & Certified PMs</h3>
+          <p class="text-muted dark:text-slate-400">Our project managers are seasoned IT professionals, many holding PMP or equivalent certifications, with a proven track record of delivering complex projects.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">End-to-End Project Oversight</h3>
+          <p class="text-muted dark:text-slate-400">We manage all phases of the project lifecycle: initiation, planning, execution, monitoring & controlling, and closure.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Clear Communication & Stakeholder Management</h3>
+          <p class="text-muted dark:text-slate-400">We act as the central point of communication, keeping all stakeholders informed, aligned, and engaged throughout the project.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Risk Management & Mitigation</h3>
+          <p class="text-muted dark:text-slate-400">We proactively identify potential risks, develop mitigation strategies, and manage issues effectively to keep your project on track.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Budget & Schedule Adherence</h3>
+          <p class="text-muted dark:text-slate-400">Our meticulous planning and oversight help ensure your projects are delivered within budget and on schedule.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Vendor Coordination</h3>
+          <p class="text-muted dark:text-slate-400">We can manage and coordinate with multiple vendors, ensuring seamless integration and accountability.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Focus on Business Objectives</h3>
+          <p class="text-muted dark:text-slate-400">We don't just manage tasks; we ensure your IT projects align with and deliver on your strategic business goals.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Quality Assurance</h3>
+          <p class="text-muted dark:text-slate-400">We implement processes to ensure the quality of deliverables and that project outcomes meet your expectations.</p>
+        </li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Our Project Management Services Include:"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ul class="list-disc list-inside space-y-2 text-muted dark:text-slate-400">
+        <li>Project planning and scope definition.</li>
+        <li>Resource allocation and team leadership (including ITT technicians and your internal staff if needed).</li>
+        <li>Timeline development and management.</li>
+        <li>Budget development and tracking.</li>
+        <li>Risk assessment and mitigation planning.</li>
+        <li>Communication planning and execution.</li>
+        <li>Stakeholder reporting and management.</li>
+        <li>Change management.</li>
+        <li>Quality control and assurance.</li>
+        <li>Project documentation and handover.</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="When Do You Need IT Project Management?"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ul class="list-disc list-inside space-y-2 text-muted dark:text-slate-400">
+        <li>Large-scale technology deployments or upgrades (e.g., ERP, CRM).</li>
+        <li>Multi-site rollouts requiring complex logistics.</li>
+        <li>Infrastructure overhauls or data center migrations.</li>
+        <li>Projects involving multiple departments or external vendors.</li>
+        <li>Any critical IT initiative where failure is not an option and internal PM resources are limited.</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    title="Drive Your Key IT Initiatives to Success."
+    subtitle="Let IT Technicians' expert project managers take the lead on your next complex IT project. We provide the structure, expertise, and diligence to ensure your objectives are met, on time and within budget."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Project Management Consultation',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout> 

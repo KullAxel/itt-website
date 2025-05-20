@@ -1,0 +1,107 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro'; // For Why Trust ITT
+import Steps from '~/components/widgets/Steps.astro'; // For Emergency Response Process
+
+const metadata = {
+  title: "24/7 Emergency IT Support | Rapid On-Site Response | IT Technicians",
+  description: "Critical IT failure? Get FAST on-site emergency support from IT Technicians. Minimize downtime & protect your business with our rapid response team.",
+};
+const emergencyPhoneNumber = "1-800-ITT-ASAP"; // Placeholder
+const emergencyPhoneNumberTel = `tel:${emergencyPhoneNumber.replace(/\D/g, '')}`;
+
+const ctaActions = [
+  {
+    variant: 'primary',
+    text: 'Request Emergency Help NOW',
+    href: emergencyPhoneNumberTel, // Link to phone number
+    classes: {btn: 'bg-white text-red-700 hover:bg-gray-200 !font-bold'} // Prominent styling
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Critical IT Failure? Get Back Online FAST with Our Emergency Support."
+    subtitle="When an IT disaster strikes, every minute of downtime costs you money, damages your reputation, and disrupts your business. IT Technicians' Emergency Support service is your lifeline. We provide rapid-response, on-site assistance from expert field technicians to resolve critical IT issues and minimize the impact on your operations, nationwide."
+  />
+
+  <Content
+    title="Why Trust ITT in an Emergency?"
+  >
+    <Fragment slot="content">
+      <ul class="space-y-4">
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Speed is Our Priority</h3>
+          <p class="text-muted dark:text-slate-400">We understand the urgency. Our streamlined dispatch process aims to get a qualified technician to your location as quickly as possible.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Expert Diagnosis & Resolution</h3>
+          <p class="text-muted dark:text-slate-400">Our technicians are seasoned problem-solvers, skilled in quickly identifying the root cause of critical failures and implementing effective solutions.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Minimize Business Disruption</h3>
+          <p class="text-muted dark:text-slate-400">Our goal is to restore your systems and get your operations back to normal with minimal delay, reducing financial losses and operational chaos.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Nationwide Network, Local Presence</h3>
+          <p class="text-muted dark:text-slate-400">With technicians across the country, we can provide on-site emergency support wherever your business locations are.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Comprehensive Issue Coverage</h3>
+          <p class="text-muted dark:text-slate-400">From server crashes and network outages to cybersecurity incidents (initial response) and critical hardware failures, we're equipped to handle a wide range of IT emergencies.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Clear Communication</h3>
+          <p class="text-muted dark:text-slate-400">We keep you informed throughout the resolution process, providing updates and clear explanations of the actions being taken.</p>
+        </li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="What Constitutes an IT Emergency?"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ul class="list-disc list-inside space-y-2 text-muted dark:text-slate-400">
+        <li>Complete system or network outage affecting multiple users or critical business functions.</li>
+        <li>Server failure or data access issues.</li>
+        <li>Critical security breaches or active cyber-attacks (requiring immediate on-site containment/assessment).</li>
+        <li>Failure of essential business hardware (e.g., POS systems, critical production equipment interfaces).</li>
+        <li>Any IT issue causing significant, ongoing financial loss or operational paralysis.</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Our Emergency Response Process"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ol class="list-decimal list-inside space-y-4 text-muted dark:text-slate-400">
+        <li><strong>Immediate Contact:</strong> Call our dedicated emergency hotline: <a href={emergencyPhoneNumberTel} class="font-bold text-primary-600 dark:text-primary-400 hover:underline">{emergencyPhoneNumber}</a>.</li>
+        <li><strong>Rapid Assessment:</strong> We'll quickly gather essential information about the issue and its impact.</li>
+        <li><strong>Technician Dispatch:</strong> We dispatch the nearest available, qualified technician to your site.</li>
+        <li><strong>On-Site Troubleshooting & Resolution:</strong> The technician works diligently to diagnose and fix the problem.</li>
+        <li><strong>Post-Incident Review (Optional):</strong> We can help you understand the cause and recommend preventative measures for the future.</li>
+      </ol>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    classes={{ container: 'bg-red-700 dark:bg-red-900 text-white'}}
+    title="Facing an IT Crisis? Don't Wait!"
+    subtitle="Time is critical. Contact IT Technicians now for immediate emergency IT support. Our team is ready to help you overcome your most challenging IT failures."
+    actions={ctaActions}
+  >
+    <Fragment slot="footer">
+      <p class="mt-4 text-center text-lg">
+        Add Our Emergency Line to Your Contacts: <strong class="text-xl">{emergencyPhoneNumber}</strong>
+      </p>
+    </Fragment>
+  </CallToAction>
+</Layout> 

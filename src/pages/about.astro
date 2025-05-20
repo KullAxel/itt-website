@@ -1,228 +1,115 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
+// src/pages/about.astro
 import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro'; // For Core Values, can adapt for icons
 
 const metadata = {
-  title: 'About us',
+  title: "About IT Technicians | Our Mission, Vision & Story",
+  description: "Learn about IT Technicians, your partners in IT excellence. Discover our mission to revolutionize IT support with dedicated technicians and innovative solutions.",
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <HeroText
+    title="More Than Just Technicians: We're Your Partners in IT Excellence."
+  />
 
-  <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
+  <Content
+    title="Our Story - Forging a New Path in IT Support"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mb-8 md:mb-12' }}
   >
-    <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+    <Fragment slot="content">
+      <p class="text-lg text-muted dark:text-slate-400 leading-relaxed">
+        Founded by an experienced field IT engineer who witnessed firsthand the frustrations of inconsistent, fragmented IT support, IT Technicians was born out of a desire to do things differently. We saw businesses struggling with a revolving door of contractors, escalating costs, and the constant headache of managing IT across multiple locations without dedicated on-site expertise. Our founder envisioned a service that bridged this gap: connecting businesses directly with dedicated, highly skilled field technicians who not only fix problems but become an integral part of their clients' success. This vision is built on fostering long-term partnerships, ensuring continuity of knowledge, and leveraging technology to make expert IT support more accessible and effective than ever before.
+      </p>
     </Fragment>
+  </Content>
 
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+  <Content
+    title="Our Mission"
+  >
+    <Fragment slot="content">
+      <blockquote class="text-lg italic text-muted dark:text-slate-400 border-l-4 border-primary-600 pl-4 py-2">
+        "IT Technicians is dedicated to revolutionizing IT support services by providing dedicated, specialized field technicians to businesses lacking on-site IT staff across multiple locations. Our mission is to enhance service quality, increase efficiency, and reduce costs for businesses, eliminating the need for multiple subcontractors and ensuring consistent, reliable IT support."
+      </blockquote>
     </Fragment>
-  </Hero>
+  </Content>
 
-  <!-- Stats Widget ****************** -->
+  <Content
+    title="Our Vision"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <blockquote class="text-lg italic text-muted dark:text-slate-400 border-l-4 border-primary-600 pl-4 py-2">
+        "Our vision is to become the premier provider of on-demand, dedicated IT field technicians across the United States. We aim to set a new standard in IT support by leveraging cutting-edge technology and a vast network of skilled professionals to meet the evolving demands of businesses in an increasingly digital landscape."
+      </blockquote>
+    </Fragment>
+  </Content>
 
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
-  />
+  <Content
+    title="Our Core Values - The ITT Way"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <!-- This section can be styled using Features2 or a custom grid/list with icons -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Customer-Centricity</h3>
+          <p class="text-muted dark:text-slate-400">
+            Your success is our primary focus. We listen to your needs, understand your challenges, and tailor our services to deliver maximum value and satisfaction.
+          </p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Innovation & Excellence</h3>
+          <p class="text-muted dark:text-slate-400">
+            We embrace cutting-edge technology, like our AI-powered onboarding platform, and continuously seek ways to improve our service delivery and the expertise of our technicians. We strive for excellence in every interaction.
+          </p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Integrity & Transparency</h3>
+          <p class="text-muted dark:text-slate-400">
+            We believe in honest, open communication and ethical practices. You can trust us to provide clear pricing, reliable service, and to always act in your best interest.
+          </p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Collaboration & Partnership</h3>
+          <p class="text-muted dark:text-slate-400">
+            We see ourselves as an extension of your team. We work collaboratively with your staff and other vendors to achieve common goals, fostering strong, long-term partnerships.
+          </p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Reliability & Accountability</h3>
+          <p class="text-muted dark:text-slate-400">
+            When you partner with ITT, you can count on us. We take ownership of our commitments and ensure our technicians deliver dependable, high-quality support.
+          </p>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
 
-  <!-- Features3 Widget ************** -->
+  <Content
+    title="Meet the Leadership/Our Team (Placeholder)"
+    classes={{ title: 'text-2xl sm:text-3xl font-semibold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg text-muted dark:text-slate-400 text-center">
+        (Brief bio of founder, highlighting field experience and vision. Placeholder for key leadership as team grows.)
+      </p>
+    </Fragment>
+  </Content>
 
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
-    items={[
+  <CallToAction
+    title="Partner with a Team That's Invested in Your Success."
+    subtitle="Discover the ITT difference. We're passionate about providing exceptional IT support that empowers businesses like yours to thrive."
+    actions={[
       {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'E-commerce',
-        description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Blog',
-        description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Business',
-        description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
-    }}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        variant: 'primary',
+        text: 'Request a Free Consultation',
+        href: '/contact',
       },
     ]}
   />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
-    isReversed={true}
-    callToAction={{
-      text: 'See more',
-      href: '/',
-    }}
-    items={[
-      {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Positive customer feedback and reviews',
-        description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Awards and recognition as industry experts',
-        description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
-    items={[
-      {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
-      },
-      {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
-      },
-      {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Technical Support"
-    tagline="Contact us"
-    columns={2}
-    items={[
-      {
-        title: 'Chat with us',
-        description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
-        icon: 'tabler:messages',
-      },
-      {
-        title: 'Call us',
-        description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
-      },
-    ]}
-  />
-</Layout>
+</Layout> 

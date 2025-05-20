@@ -1,224 +1,85 @@
 ---
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
+// src/pages/services.astro
+// Main Service Landing Page
 import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro'; // Or similar for card/list layout
 
 const metadata = {
-  title: 'Services',
+  title: "Comprehensive IT Support Services for Businesses | IT Technicians",
+  description: "Explore IT Technicians' full range of IT services, including dedicated technicians, hourly support, emergency response, and project management. Get tailored IT solutions.",
+  // canonical: new URL(Astro.url.pathname, Astro.site).href,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
-    }}
+  <HeroText
+    title="Your Nationwide Partner for All IT Field Service Needs"
+    subtitle="Tired of juggling multiple IT vendors and inconsistent support across your locations? IT Technicians offers a full spectrum of on-site IT services designed to streamline your operations, reduce costs, and ensure your technology always supports your business goals. From dedicated long-term support to urgent emergency responses, we provide the expert technicians you need, exactly where and when you need them. Discover how our tailored solutions can bring predictability and excellence to your IT infrastructure."
   />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
-    columns={3}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
-      },
-      {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
-      },
-      {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
-      },
-      {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
 
   <Content
-    isReversed
-    items={[
-      {
-        title: 'High-Quality Designs',
-        description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
-      },
-      {
-        title: 'Customization Tools',
-        description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
-      },
-      {
-        title: 'Pre-Designed Elements',
-        description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
-      },
-      {
-        title: 'Preview and Mockup Views',
-        description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
-    }}
+    title="Our Core IT Services"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mb-8 md:mb-12' }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+      <!-- This section can be styled using Features2 or a custom grid/list -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Dedicated Technician Assignments</h3>
+          <p class="text-muted dark:text-slate-400 mb-4">
+            Experience unparalleled consistency and proactive support with a dedicated IT technician who becomes an integral part of your team. They'll gain in-depth knowledge of your specific environments, ensuring swift resolutions and strategic IT alignment. Ideal for businesses seeking long-term stability and a deep partnership.
+          </p>
+          <a href="/services/dedicated-technicians" class="btn btn-primary">Learn About Dedicated Support</a>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Hourly Technician Hire</h3>
+          <p class="text-muted dark:text-slate-400 mb-4">
+            Need flexible, on-demand IT expertise? Our hourly technician service provides skilled professionals for immediate troubleshooting, short-term projects, or to augment your existing IT staff during peak workloads. Get the right skills at the right time, without long-term commitments.
+          </p>
+          <a href="/services/hourly-hire" class="btn btn-primary">Get On-Demand Expertise</a>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Emergency Support</h3>
+          <p class="text-muted dark:text-slate-400 mb-4">
+            Critical IT failure? Don't let downtime cripple your operations. Our rapid-response emergency support service gets qualified technicians on-site quickly to diagnose and resolve urgent issues, minimizing disruption and protecting your revenue.
+          </p>
+          <a href="/services/emergency-support" class="btn btn-primary">Request Immediate Help</a>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Project-Based Work</h3>
+          <p class="text-muted dark:text-slate-400 mb-4">
+            Planning an IT installation, office relocation, system upgrade, or technology rollout? Our experienced technicians deliver successful project outcomes, ensuring your initiatives are completed on time, within budget, and to your exact specifications.
+          </p>
+          <a href="/services/project-based-work" class="btn btn-primary">Discuss Your IT Project</a>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Project Management Services</h3>
+          <p class="text-muted dark:text-slate-400 mb-4">
+            For complex IT initiatives, our dedicated project managers provide the leadership and coordination needed for seamless execution. We oversee every detail, from planning and vendor management to deployment and post-launch support, ensuring your projects align with strategic objectives.
+          </p>
+          <a href="/services/project-management" class="btn btn-primary">Explore Expert PM Services</a>
+        </div>
+      </div>
     </Fragment>
   </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Time Savings',
-        description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Professional Appearance',
-        description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Cost-Efficiency',
-        description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Instant Download',
-        description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
-    </Fragment>
-  </Content>
-
-  <!-- Testimonials Widget *********** -->
-
-  <Testimonials
-    title="Words from real customers"
-    testimonials={[
-      {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
-        },
-      },
-      {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
-        },
-      },
-      {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
-        image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
-        },
-      },
-    ]}
-    callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:chevron-right',
-    }}
-  />
-
-  <!-- CallToAction Widget *********** -->
 
   <CallToAction
+    title="Not Sure Which Service is Right For You?"
+    subtitle="Every business has unique IT needs. Let our experts help you identify the most effective and cost-efficient support model for your organization. Schedule a free consultation today to discuss your challenges and explore tailored solutions."
     actions={[
       {
         variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
+        text: 'Request a Free Consultation',
+        href: '/contact',
+        // icon: 'tabler:mail',
       },
     ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
   />
 </Layout>

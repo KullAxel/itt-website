@@ -1,0 +1,99 @@
+---
+// src/pages/services/hourly-hire.astro
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro'; // For Benefits
+import Steps from '~/components/widgets/Steps.astro'; // For Process
+
+const metadata = {
+  title: "On-Demand Hourly IT Technicians | Flexible IT Support | IT Technicians",
+  description: "Need flexible IT expertise? ITT provides skilled hourly technicians for troubleshooting, projects & support. Get expert help, exactly when you need it.",
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Expert IT Support, Exactly When You Need It – On Your Terms."
+    subtitle="Facing an unexpected IT issue, a short-term project, or simply need an extra pair of expert hands? IT Technicians' Hourly Technician Hire service offers the ultimate flexibility. Access our nationwide network of skilled, pre-vetted IT professionals on an as-needed basis. Get the precise expertise you require, for the exact duration you need, without the commitment or cost of a long-term contract."
+  />
+
+  <Content
+    title="Benefits of Our Hourly IT Support"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ul class="space-y-4">
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Ultimate Flexibility</h3>
+          <p class="text-muted dark:text-slate-400">Scale your IT support up or down based on your immediate needs. Perfect for fluctuating workloads, special projects, or covering staff absences.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Cost-Effective Solutions</h3>
+          <p class="text-muted dark:text-slate-400">Pay only for the hours you use. Avoid the expense of retaining full-time staff or contractors when you only need periodic assistance.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Access to Specialized Skills</h3>
+          <p class="text-muted dark:text-slate-400">Our diverse network includes technicians with expertise across a wide range of technologies and systems. Get specialized help for unique challenges without hiring a niche expert full-time.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Rapid Response for Urgent Needs</h3>
+          <p class="text-muted dark:text-slate-400">While not a substitute for our Emergency Support service, we can often deploy hourly technicians quickly to address pressing but non-critical issues.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Nationwide Coverage</h3>
+          <p class="text-muted dark:text-slate-400">No matter where your sites are located, we can provide local, on-site hourly support.</p>
+        </li>
+        <li>
+          <h3 class="text-xl font-semibold text-primary-600 dark:text-primary-400">Pre-Vetted Professionals</h3>
+          <p class="text-muted dark:text-slate-400">Rest assured that every ITT technician is thoroughly screened, background-checked, and possesses proven expertise, even for short-term engagements.</p>
+        </li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="When to Use Hourly IT Technician Hire"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ul class="list-disc list-inside space-y-2 text-muted dark:text-slate-400">
+        <li>Troubleshooting specific hardware or software issues.</li>
+        <li>Assistance with software installations or configurations.</li>
+        <li>Network diagnostics and minor repairs.</li>
+        <li>User support and training for new systems.</li>
+        <li>Temporary staff augmentation during busy periods or employee leave.</li>
+        <li>Small-scale IT projects or tasks.</li>
+        <li>Second opinions or specialized consultations.</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <Content
+    title="Simple, Transparent Process"
+    classes={{ title: 'text-3xl sm:text-4xl font-bold text-center mt-12 mb-8 md:mb-12' }}
+  >
+    <Fragment slot="content">
+      <ol class="list-decimal list-inside space-y-4 text-muted dark:text-slate-400">
+        <li><strong>Tell Us Your Need:</strong> Contact us with details of the IT task or issue.</li>
+        <li><strong>We Match the Expertise:</strong> We identify a qualified technician in your area with the right skills.</li>
+        <li><strong>Agree on Scope & Hours:</strong> We provide a clear estimate for the required time.</li>
+        <li><strong>Technician On-Site:</strong> Your ITT professional arrives to complete the work efficiently.</li>
+        <li><strong>Problem Solved:</strong> You get expert resolution, and only pay for the time used.</li>
+      </ol>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    title="Need Expert IT Help Without the Long-Term Tie-In?"
+    subtitle="Get fast, flexible, and reliable on-site IT support exactly when you need it. Our hourly technicians are ready to tackle your IT challenges, big or small."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get On-Demand IT Support',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout> 

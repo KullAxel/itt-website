@@ -1,0 +1,63 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import BlogList from '~/components/blog/List.astro';
+import Headline from '~/components/blog/Headline.astro';
+import Pagination from '~/components/blog/Pagination.astro';
+import { fetchPosts } from '~/utils/blog';
+import { APP_BLOG } from 'astrowind:config';
+
+// Fetch all posts for the main blog page
+const posts = await fetchPosts();
+
+// Determine pagination details (simplified for a single page view, but good to have structure)
+// For a true paginated main blog page, we'd use Astro's paginate() function here.
+// For this task, we'll list all posts on one page.
+const PER_PAGE = APP_BLOG.postsPerPage || 6; // Get from config or default
+const totalPages = Math.ceil(posts.length / PER_PAGE);
+const currentPage = 1; // This is the main, single blog page
+
+const page = {
+  data: posts, // Display all fetched posts
+  currentPage: currentPage,
+  url: {
+    prev: undefined, // No previous page for the main blog page
+    next: totalPages > 1 ? `/blog/page/2` : undefined, // Example next, needs dynamic path if paginating
+  },
+};
+
+const metadata = {
+  title: 'IT Insights & Tech Solutions Blog | IT Technicians',
+  description: "Stay ahead with IT Technicians' blog. Get expert insights, practical advice & strategies on cybersecurity, IT support, and business technology optimization.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: 'blog',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
+    <Headline
+      title="The IT Technicians Blog: Expert Insights for Your Business Technology"
+      subtitle="Stay ahead of the curve with the latest IT trends, practical advice, and expert strategies from IT Technicians. Our blog is dedicated to helping businesses like yours navigate the complexities of IT, optimize your technology investments, and achieve operational excellence. Explore articles on everything from cybersecurity best practices to the benefits of dedicated IT support."
+    />
+    {posts && posts.length > 0 ? (
+      <>
+        <BlogList posts={page.data} />
+        {/* Only show pagination if there are more posts than fit on one "conceptual" page,
+            or if you decide to implement actual pagination on this main page later.
+            For now, as it lists all posts, pagination might not be strictly needed
+            unless the list becomes very long.
+        */}
+        {/* <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} /> */}
+      </>
+    ) : (
+      <div class="text-center text-xl text-muted dark:text-slate-400">
+        <p>No posts published yet. Check back soon!</p>
+      </div>
+    )}
+  </section>
+</Layout> 
